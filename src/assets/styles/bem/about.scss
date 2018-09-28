@@ -1,0 +1,79 @@
+.about {
+    @include space-from-top;
+    @include space-from-bottom;
+    &__wrapper {
+        display: flex;
+    }
+    &__img {
+        img {
+        }
+    }
+    &__info {
+        max-width: 100%;
+        width: rem(460);
+        margin-left: rem(162);
+        padding-top: rem(162);
+    }
+    &__caption {
+        font-size: rem(36);
+        font-weight: 600;
+        font-family: $main-font;
+        color: $caption-color;
+    }
+    &__description {
+        font-size: rem(20);
+        font-weight: 300;
+        line-height: rem(30);
+        letter-spacing: .6px;
+        font-family: $add-font;
+        color: $caption-color;
+        padding-top: rem(14);
+        p {
+            padding: rem(6) 0;
+        }
+        strong {
+            font-weight: 400;
+        }
+    }
+    @include max-width-bp(tablet) {
+        &__info {
+            margin-left: rem(82);
+        }
+    }
+    @include max-width-bp(tablet-small) {
+        &__info {
+            margin-left: rem(32);
+        }
+    }
+    @include max-width-bp(mobile) {
+        text-align: center;
+        &__wrapper {
+            flex-direction: column-reverse;
+        }
+        &__img {
+            img {
+                margin: auto;
+                display: block;
+                max-width: 100%;
+            }
+        }
+        &__info {
+            margin-left: 0;
+            padding-top: rem(0);
+            padding-bottom: rem(40);
+        }
+        &__description {
+           font-size: rem(18);
+           line-height: rem(26);
+           padding-top: rem(24);
+           p {
+               padding: 0;
+           }
+        }
+    }
+    @include max-width-bp(mobile-small) {
+        &__caption {
+            font-size: rem(30);
+        }
+    }
+}

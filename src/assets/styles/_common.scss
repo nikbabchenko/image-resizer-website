@@ -1,0 +1,59 @@
+html, body {
+    font-size: 16px;
+    font-family: $main-font;
+    font-weight: 400;
+    line-height: normal;
+    min-height: 100%;
+    min-width: rem(320);
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    line-height: normal;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+a, button, input, select, textarea, [contenteditable="true"], [tabindex] {
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    line-height: normal;
+}
+
+
+input,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+}
+

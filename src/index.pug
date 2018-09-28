@@ -1,0 +1,71 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title Image Resizer Tech | Main
+		include partials/fonts
+		include partials/favicon
+	body
+		include partials/header
+		.action
+			.action__wrapper.container
+				.action__info
+					.action__caption
+						| Image resizer simply cares
+						br
+						|  for your free space
+					.action__description
+						p We are doing our  best to give the touchest experience of fast resizing.
+						p It’s simple. Just try it out!
+				.action__img
+					img(src="./assets/img/action-img.svg", alt="")
+
+
+		.steps
+			.steps__wrapper.container
+				.steps__caption How it works
+				.steps__content
+					.steps__item
+						.steps__item-icon
+							img(src="./assets/img/step-icon-1.svg", alt="")
+						.steps__item-title Drop images
+					.steps__item
+						.steps__item-icon
+							img(src="./assets/img/step-icon-2.svg", alt="")
+						.steps__item-title Resize images
+					.steps__item
+						.steps__item-icon
+							img(src="./assets/img/step-icon-3.svg", alt="")
+						.steps__item-title Download
+
+		.about
+			.about__wrapper.container
+				.about__img
+					img(src="./assets/img/about-img.png", alt="")
+				.about__info
+					.about__caption Comprehensive Settings
+					.about__description
+						p
+							| Choose the max-width, quality and you are
+							br
+							| ready to go.
+						p
+							| You can also specify if you want to save images to archive or directly rewrite them
+							strong  (be aware that you’ll can’t return them back after rewriting)
+
+		.buy
+			.buy__wrapper.container
+				.buy__caption Try it out!
+				.buy__description Optimize your images any time on your Mac
+				a.buy__link.main-btn.main-btn--fill(href="https://itunes.apple.com/us/app/image-resizer-tech/id1437007847?ls=1&mt=12", target="_blank") Download for free
+
+		include partials/footer
+
+
+
+
+
+
+
+

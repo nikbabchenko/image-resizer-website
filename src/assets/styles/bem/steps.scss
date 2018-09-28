@@ -1,0 +1,78 @@
+
+.steps {
+    background: $bg-color;
+    @include space-from-top;
+    @include space-from-bottom;
+    &__wrapper {
+        text-align: center;
+    }
+    &__caption {
+        font-size: rem(36);
+        font-weight: 600;
+        font-family: $main-font;
+        color: $secondary-color;
+    }
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: rem(40);
+        counter-reset: item;
+    }
+    &__item {
+        text-align: center;
+        width: 30%;
+        padding-top: rem(40);
+        &-icon {
+            width: rem(90);
+            height: rem(90);
+            border: 1px solid rgba($primary-color,.2);
+            border-radius: 50%;
+            display: flex;
+            margin: 0 auto;
+            position: relative;
+            &:after {
+                counter-increment: item;                 /* Инкрементирует счетчик*/
+                content: counter(item);
+                display: block;
+                color: $secondary-color;
+                background: $bg-color;
+                width: rem(20);
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                font-weight: 500;
+                font-family: $main-font;
+            }
+            img {
+                display: block;
+                margin: auto;
+            }
+        }
+        &-title {
+            font-size: rem(18);
+            color: $secondary-color;
+            font-weight: 400;
+            font-family: $main-font;
+            padding-top: rem(24);
+        }
+    }
+    @include max-width-bp(mobile) {
+        &__content {
+            flex-direction: column;
+            padding-top: 0
+        }
+        &__item {
+            padding-top: rem(60);
+            width: 100%;
+            &-title {
+                padding-top: 10px;
+            }
+        }
+    }
+    @include max-width-bp(mobile-small) {
+        &__caption {
+            font-size: rem(30);
+        }
+    }
+}

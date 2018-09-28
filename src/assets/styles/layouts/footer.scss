@@ -1,0 +1,49 @@
+.footer {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .footer__links {
+        display: flex;
+        justify-content: center;
+
+        &-item {
+            color: $text-color;
+            padding: rem(20) rem(5);
+            font-size: rem(14);
+            margin: 0 rem(10);
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__copy {
+        font-family: $main-font;
+        font-size: rem(14);
+        color: $text-color;
+        padding: rem(20) 0;
+    }
+    &__social {
+        padding: rem(20) 0;
+    }
+   @include max-width-bp(mobile) {
+       padding-bottom: rem(10);
+        &__wrapper {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        &__copy {
+            span {
+                padding-top: rem(10);
+                display: inline-block;
+            }
+        }
+    }
+}

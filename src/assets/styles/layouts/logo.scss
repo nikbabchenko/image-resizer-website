@@ -1,0 +1,13 @@
+.logo {
+    display: block;
+    &__img {
+        display: block;
+        width: 134px;
+        height: auto;
+    }
+    @include max-width-bp(mobile) {
+        &__img {
+            width: 110px;
+        }
+    }
+}

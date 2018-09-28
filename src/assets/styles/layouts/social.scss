@@ -1,0 +1,19 @@
+.social {
+    display: flex;
+    &__item {
+        display: block;
+        transition: opacity .2s;
+        &:before {
+            color: $text-color;
+            font-size: rem(16);
+        }
+        &+& {
+            margin-left: rem(27);
+        }
+        &:hover {
+            &:before {
+                color: $primary-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@import '~reset.scss/reset';
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+@import 'common';
+@import 'grid';
+@import './layouts/header';
+@import './layouts/main-btn';
+@import './layouts/social';
+@import './layouts/footer';
+@import './layouts/logo';
+@import './bem/action';
+@import './bem/about';
+@import './bem/steps';
+@import './bem/buy';
+

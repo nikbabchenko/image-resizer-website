@@ -1,0 +1,30 @@
+.main-btn {
+    display: inline-block;
+    white-space: nowrap;
+    background: $white;
+    font-size: rem(14);
+    font-family: $main-font;
+    font-weight: 500;
+    color: $secondary-color;
+    border: 1px solid rgba($secondary-color,.4);
+    border-radius: 4px;
+    padding: rem(8) rem(24);
+    transition: .4s;
+    letter-spacing: rem(.34);
+    text-transform: uppercase;
+    &:hover {
+        border-color: $secondary-color;
+    }
+    &--fill {
+        background: $white;
+        color: $primary-color;
+        padding: rem(12) rem(34);
+        border-color: transparent;
+        &:hover {
+            border-color: transparent;
+        }
+    }
+    @include max-width-bp(mobile) {
+        font-size: rem(11);
+    }
+}

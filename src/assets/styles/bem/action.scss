@@ -1,0 +1,97 @@
+.action {
+    @include space-from-top;
+    @include space-from-bottom;
+    height: 100vh;
+    display: flex;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+    }
+    &__info {
+    }
+    &__caption {
+        font-size: rem(36);
+        font-weight: 600;
+        font-family: $main-font;
+        color: $caption-color;
+    }
+    &__description {
+        font-size: rem(20);
+        font-weight: 300;
+        line-height: rem(30);
+        letter-spacing: .6px;
+        font-family: $add-font;
+        color: $caption-color;
+        max-width: 100%;
+        width: rem(480);
+        padding-top: rem(14);
+        p {
+            padding: rem(6) 0;
+        }
+    }
+    &__img {
+        width: rem(540);
+        max-width: 100%;
+        img {
+            display: block;
+            width: 520px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+    @include max-width-bp(tablet) {
+        &__img {
+            width: rem(440);
+        }
+        &__info {
+            max-width: 400px;
+        }
+        &__caption {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    @include max-width-bp(tablet-small) {
+        text-align: center;
+        &__wrapper {
+            flex-direction: column-reverse
+        }
+        &__info {
+            padding-top: rem(60);
+            max-width: 500px;
+        }
+        &__description {
+            p {
+                padding: 0;
+            }
+        }
+    }
+    @include max-width-bp(mobile) {
+        height: auto;
+        &__wrapper {
+            padding-top: rem(70);
+        }
+        &__info {
+            padding-top: rem(30);
+        }
+        &__img,
+        &__info {
+            width: 100%;
+        }
+        &__caption {
+            font-size: rem(32);
+            br {
+                display: block;
+            }
+        }
+        &__description {
+           font-size: rem(18);
+           line-height: rem(26);
+           padding-top: rem(24);
+        }
+    }
+}

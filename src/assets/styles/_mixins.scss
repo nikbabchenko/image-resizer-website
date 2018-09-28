@@ -1,0 +1,71 @@
+// pix to rem
+$baseValue: 16;
+@function rem($sizeValue){
+	@return ($sizeValue / $baseValue) + rem;
+}
+
+//fontface
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+	@return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+	$extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_") );
+	$formats: ( otf: "opentype", ttf: "truetype" );
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+
+
+// spaces
+
+@mixin space-from-top {
+	padding-top: rem(120);
+	@include max-width-bp(tablet-small) {
+		padding-top: rem(80);
+	}
+	@include max-width-bp(mobile) {
+		padding-top: rem(60);
+	}
+}
+@mixin space-from-bottom {
+	padding-bottom: rem(120);
+	@include max-width-bp(tablet-small) {
+		padding-bottom: rem(80);
+	}
+	@include max-width-bp(mobile) {
+		padding-bottom: rem(60);
+	}
+}
+
+
+//media query
+@mixin max-width-bp($point) {
+  @if $point == tablet {
+    @media (max-width: 1200px) { @content; }
+  }
+  @else if $point == tablet-small {
+    @media (max-width: 1024px - 1px) { @content; }
+  }
+  @else if $point == mobile {
+    @media (max-width: 768px - 1px) { @content; }
+  }
+  @else if $point == mobile-small {
+    @media (max-width: 340px) { @content; }
+  }
+}

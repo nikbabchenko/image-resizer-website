@@ -1,0 +1,21 @@
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: rem(80);
+    background: $white;
+    z-index: 2;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    @include max-width-bp(tablet-small) {
+        height: rem(70);
+    }
+    @include max-width-bp(mobile) {
+        height: rem(54);
+	}
+}
