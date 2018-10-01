@@ -23,7 +23,7 @@ html(lang='en')
 						p We are doing our  best to give the touchest experience of fast resizing.
 						p It’s simple. Just try it out! (only for Mac OS for now)
 				.action__img
-					img(src="./assets/img/action-img.png", alt="")
+					img(src="/assets/img/action-img.png", alt="")
 
 
 		.steps
@@ -32,21 +32,26 @@ html(lang='en')
 				.steps__content
 					.steps__item
 						.steps__item-icon
-							img(src="./assets/img/step-icon-1.svg", alt="")
+							img(src="/assets/img/step-icon-1.svg", alt="")
 						.steps__item-title Drop images
 					.steps__item
 						.steps__item-icon
-							img(src="./assets/img/step-icon-2.svg", alt="")
+							img(src="/assets/img/step-icon-2.svg", alt="")
 						.steps__item-title Resize images
 					.steps__item
 						.steps__item-icon
-							img(src="./assets/img/step-icon-3.svg", alt="")
+							img(src="/assets/img/step-icon-3.svg", alt="")
 						.steps__item-title Download
 
+			.preview.container
+				.preview__video
+					video(controls)
+						source(src="/assets/img/video.mp4" type="video/mp4")
+						source(src="/assets/img/video.ogg" type="video/ogg")
 		.about
 			.about__wrapper.container
 				.about__img
-					img(src="./assets/img/about-img.png", alt="")
+					img(src="/assets/img/about-img.png", alt="")
 				.about__info
 					.about__caption Comprehensive Settings and fast as rocket
 					.about__description
